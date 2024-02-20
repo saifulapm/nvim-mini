@@ -68,8 +68,6 @@ end)
 
 later(function() require('mini.align').setup() end)
 
-later(function() require('mini.animate').setup({ scroll = { enable = false } }) end)
-
 later(function()
   require('mini.basics').setup({
     options = {
@@ -132,6 +130,8 @@ end)
 
 -- Don't really need it on daily basis
 -- later(function() require('mini.colors').setup() end)
+-- later(function() require('mini.doc').setup() end)
+-- later(function() require('mini.animate').setup({ scroll = { enable = false } }) end)
 
 later(function() require('mini.comment').setup() end)
 
@@ -155,10 +155,8 @@ end)
 
 later(function() require('mini.cursorword').setup() end)
 
-later(function() require('mini.doc').setup() end)
-
 later(function()
-  require('mini.files').setup({ windows = { preview = true } })
+  require('mini.files').setup({ windows = { preview = false } })
   local minifiles_augroup = vim.api.nvim_create_augroup('ec-mini-files', {})
   vim.api.nvim_create_autocmd('User', {
     group = minifiles_augroup,

@@ -108,3 +108,6 @@ lspconfig.clangd.setup({ on_attach = on_attach_custom })
 
 -- Typescript (tsserver) ======================================================
 lspconfig.tsserver.setup({ on_attach = on_attach_custom })
+
+-- PHP (intelephense) ======================================================
+lspconfig.intelephense.setup({ on_attach = on_attach_custom })
