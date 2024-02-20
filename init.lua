@@ -245,6 +245,14 @@ later(function() require('mini.visits').setup() end)
 -- Colorful icons
 now(function() add('nvim-tree/nvim-web-devicons') end)
 
+later(function()
+  add('saifulapm/chartoggle.nvim')
+  require('chartoggle').setup ({
+    leader = '<leader>', -- you can use any key as Leader
+    keys = {',', ';' } -- Which keys will be toggle end of the line
+  })
+end)
+
 -- Tree-sitter: advanced syntax parsing, highlighting, and text objects
 later(function()
   local ts_spec = {

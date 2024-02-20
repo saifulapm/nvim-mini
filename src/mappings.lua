@@ -32,6 +32,10 @@ keymap('s', [[<BS>]], [[<BS>i]])
 keymap('c', '<C-p>', '<Up>', { silent = false })
 keymap('c', '<C-n>', '<Down>', { silent = false })
 
+  -- cursor movements
+keymap({'n', 'v', 's'}, 'H', '^') -- To the first non-blank character of the line
+keymap({'n', 'v', 's'}, 'L', 'g_') -- To the last non-blank character of the line
+
 -- Stop highlighting of search results. NOTE: this can be done with default
 -- `<C-l>` but this solution deliberately uses `:` instead of `<Cmd>` to go
 -- into Command mode and back which updates 'mini.map'.
@@ -40,3 +44,10 @@ keymap('n', [[\h]], ':let v:hlsearch = 1 - v:hlsearch<CR>', { desc = 'Toggle hls
 -- Paste before/after linewise
 keymap({ 'n', 'x' }, '[p', '<Cmd>exe "put! " . v:register<CR>', { desc = 'Paste Above' })
 keymap({ 'n', 'x' }, ']p', '<Cmd>exe "put "  . v:register<CR>', { desc = 'Paste Below' })
+
+-- reselect indented line
+keymap('v', "<", "<gv")
+keymap('v', ">", ">gv")
+keymap('v', "=", "=gv")
+keymap('v', "<BS>", "<gv")
+keymap('v', "<TAB>", ">gv")
